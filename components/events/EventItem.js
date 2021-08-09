@@ -30,14 +30,15 @@ function EventItem(props) {
                        <address>{formattedAddress}</address>
                    </div>
                 </div>
+                { ! props.detail ?
                 <div className={css.actions}>
-                    <LinkButton 
-                        label='Explore event' 
-                        link={`/events/${event.id}`}
+                    <LinkButton link={`/events/${event.id}`}
                     ><span>Explore event</span>
                     <span className={css.icon}><ArrowRightIcon/></span>
                     </LinkButton>
                 </div>
+                : <div className={css.description}>{event.description}</div>
+                }
             </div>
         </li>
     )

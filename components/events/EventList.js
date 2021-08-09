@@ -6,7 +6,7 @@ function EventList(props) {
 
     return (
         <ul className={css.list}>
-            {events && events.map(event => <EventItem key={event.id} event={event}/>)}
+            {events && events.map(event => <EventItem key={event.id} event={event} detail={false}/>)}
         </ul>
     ) 
 }
