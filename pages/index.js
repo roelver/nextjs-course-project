@@ -6,7 +6,6 @@ function HomePage() {
 
     return (
         <div>
-            <h1>Welcome to the events site</h1>
             <h3>Featured events</h3>
             <EventList events={events}/>
         </div>
