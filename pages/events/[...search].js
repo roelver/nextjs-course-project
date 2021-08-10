@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import EventList from '../../components/events/EventList';
 import { getFilteredEvents } from '../../dummy-data';
+import ErrorAlert from '../../components/ui/ErrorAlert';
 
 function EventSearchPage() {
     const router = useRouter();
@@ -23,7 +24,9 @@ function EventSearchPage() {
             { filteredEvents && filteredEvents.length > 0 ?
             <EventList events={filteredEvents}/>
             :
-            <h2 className='center'>No events matched the selected filter. <Link href='/events'>Back</Link></h2>
+            <ErrorAlert>
+            <p className='center'>No events matched the selected filter. <Link href='/events'>Back</Link></p>
+            </ErrorAlert>
             }
         </Fragment>
     );
